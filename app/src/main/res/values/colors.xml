@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#003865</color>
+    <color name="rsbColorSeekBarDefault">#ebecec</color>
+    <color name="rsbColorThumbPressed">#FFE7E7E7</color>
+    <color name="rsbColorThumbDefault">#FFFFFF</color>
+    <color name="rsbColorThumbBorder">#FFD7D7D7</color>
+    <color name="tick_mark_color">#3c4242</color>
+</resources>
