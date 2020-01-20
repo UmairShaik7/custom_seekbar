@@ -203,9 +203,9 @@ public class SeekBar {
         }
         int offset = (int) (rangeSeekBar.getProgressWidth() * currPercent);
         canvas.save();
-        canvas.translate(offset, RangeSeekBar.widthOfProgress / 2);
+        canvas.translate(offset,0);
         // translate canvas, then don't care left
-        canvas.translate(left, 0);
+        canvas.translate(left, rangeSeekBar.getProgressTop()*.6f/2);
         if (isShowIndicator) {
             onDrawIndicator(canvas, paint, formatCurrentIndicatorText(userText2Draw));
         }

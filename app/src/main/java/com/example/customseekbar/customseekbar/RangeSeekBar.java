@@ -177,7 +177,7 @@ public class RangeSeekBar extends View {
     private OnRangeChangedListener callback;
     static int widthOfProgress = 80;
     protected static int paddingRight = 30;
-    protected static int paddingLeft = 150;
+    protected static int paddingLeft = 160;
 
     public RangeSeekBar(Context context) {
         this(context, null);
@@ -300,11 +300,11 @@ public class RangeSeekBar extends View {
         progressLeft = maxThumbWidth / 2 + getPaddingLeft();
         progressRight = w - maxThumbWidth / 2 - getPaddingRight();
         progressWidth = progressRight - progressLeft;
-        progressDefaultDstRect.set(getProgressLeft(), getProgressTop() + widthOfProgress, getProgressRight(), getProgressBottom());
+        progressDefaultDstRect.set(getProgressLeft(), getProgressTop() + getProgressBottom()/2, getProgressRight(), getProgressBottom());
         progressPaddingRight = w - progressRight;
         //default value
         if (progressRadius <= 0) {
-            progressRadius = (int) ((getProgressBottom() - getProgressTop()) * 0.45f) + widthOfProgress/2;
+            progressRadius = (int) ((getProgressBottom() - getProgressTop()) * 0.45f) + ((getProgressTop() + getProgressBottom())/4);
         }
         initProgressBitmap();
     }
@@ -455,7 +455,7 @@ public class RangeSeekBar extends View {
             progressDstRect.right = rightSB.left + rightSB.getThumbScaleWidth() / 2f + progressWidth * rightSB.currPercent;
             progressDstRect.bottom = getProgressBottom();
         } else {
-            progressDstRect.top = getProgressTop() + widthOfProgress;
+            progressDstRect.top = getProgressTop() + getProgressBottom()/2;
             progressDstRect.left = leftSB.left + leftSB.getThumbScaleWidth() / 2f;
             progressDstRect.right = leftSB.left + leftSB.getThumbScaleWidth() / 2f + progressWidth * leftSB.currPercent;
             progressDstRect.bottom = getProgressBottom();
